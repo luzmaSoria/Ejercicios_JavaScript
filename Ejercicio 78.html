@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang=""es-ES">
+<!-- detectar si se teclean letras del abecedario minúsculas y mayúsculas, incluyendo la eñe-->
+
+<head>
+    <title>Ejercicio 78 onkeydown, on..</title>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            font-family:serif;
+            text-align:center;
+            background-color:gray;
+        }
+ 
+    </style>
+
+</head>
+
+<body>
+    <h1>Ejercicio 78 onkeydown, onkeypress, onkeyup</h1>
+
+    <input type="text" id="entrada">
+    <div id="mensaje"></div>
+
+</body>
+
+<script type="text/javascript">
+    let texto='';
+    const abcdmin=["a","b","c","d","e","f","g","h","i","j","k","l","m","n","ñ","o","p","q","r","s","t","u","v","w","x","y","z"];
+    const abcdmay=["A","B","C","D","E","F","G","H","I","J","K","L","M","N","Ñ","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+
+    document.getElementById("entrada").addEventListener("keydown",abecedario);
+    
+    function abecedario() {
+      texto='';  
+      var letra=event.key;
+      console.log(letra);
+
+      respuesta= abcdmin.some(elemento => elemento===letra);
+      if (respuesta) {
+        texto="Ha capturado una minúscula " + letra;
+        document.getElementById("mensaje").innerText=texto;
+      } else
+      { respuesta= abcdmay.some(elemento => elemento===letra);
+        if (respuesta) {
+        texto="Ha capturado una mayúscula " + letra;
+        document.getElementById("mensaje").innerText=texto; } 
+        else {
+            texto="Ha capturado algún número o caracter especial";
+            document.getElementById("mensaje").innerText=texto; 
+        }
+      return true;
+    }
+    }  
+
+</script>
+    
+</html>

@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+  <meta charset="UTF-8">
+  <title>Evento "ondragdrop (I)"</title>
+  
+  <style>
+    #drag {
+      width:100px;
+      height:100px;
+      /*background-color:blue; 
+      color:white; */
+      text-align:center;
+      padding-top:30px;
+      cursor:move;
+	}
+    #drop {
+      width:200px;
+      height:100px;
+      background-color:red;
+      color:white;
+      text-align:center;
+      padding-top:60px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <img id="drag" draggable="true" src="mariposa.jpg" alt="mariposa.jpg"></img>
+  <div id="drop">¡Suéltame aquí!</div>
+		
+  <script type="text/javascript">
+
+    function dragStart(event){
+      event.dataTransfer.setData("text/plain",event.target.id);
+    }
+
+    function dragOver(event){
+      event.preventDefault();
+    }
+
+    function dropHandler(event){
+      event.preventDefault();
+      const data=event.dataTransfer.getData("text/plain");
+      // siguientes 3 líneas son para desaparecer el elemento que arrastramos
+      const elementoarrastrado= document.getElementById(data);
+      event.target.appendChild(elementoarrastrado);
+      elementoarrastrado.style.display='none';
+     
+      console.log(data);
+    }
+
+      drag.addEventListener("dragstart",dragStart);
+      drop.addEventListener("dragover",dragOver);
+      drop.addEventListener("drop",dropHandler);
+
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+	<meta charset="UTF-8">
+	<title>Introducir número entre 1 y 10</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			}
+		input, button{
+			font-size: 16px;
+					}
+	</style>
+</head>
+	<body>
+		<h1>Introducir número entre 1 y 10</h1>	
+		<input type="number" id="Numero" min="1" max="10" placeholder="Número entre 1 y 10">
+		<button onclick="evaluarNum()">Evaluar</button> 
+		<p id="resultado"></p>
+	</body>
+	
+	<script type="text/javascript">
+		function evaluarNum()
+		{
+			const Numero = document.getElementById("Numero"); 
+			const resultado = document.getElementById("resultado"); 
+			const numeros= [];	
+			const num = parseInt(Numero.value, 10);
+			
+		    resultado.innerHTML = num;
+			
+			if (num < 1 || num > 10) 
+			{	
+				resultado.innerHTML = 'Capture un número válido 1 al 10';
+			}
+			else {
+			//resultado.innerHTML = 'debe entrar al ciclo';
+			for (i=1;i<=num;i++) {
+				numeros.push(i);
+				resultado.innerHTML = numeros;
+				
+				} 
+			}
+	    }
+	</script>
+
+
+</html>

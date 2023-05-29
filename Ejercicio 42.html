@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+	<meta charset="UTF-8">
+	<title>Asociar día de la semana con numeros 1 a 7</title>
+	<style>
+		body {
+			font-family:Arial,sans-serif;
+			text-align:center;
+			}
+		input, button{
+			font-size: 20px;
+					}
+		#resultado{
+            margin-top:20px;
+            font-weight:bold;
+        }
+	</style><!-- 1em = 16px -->
+</head>
+
+	<body>
+		<h1>Días de la semana numerados 1 a 7</h1>	
+		<input type="number" id="numero" min="1" max="7">
+		<button id="boton">Mostrar el día de la semana</button> 
+		
+		<div id="resultado"></div> </br>
+	
+	<script type="text/javascript">
+		
+		document.getElementById("boton").addEventListener("click",function(){
+		// Cuando se hace clic en el botón, se ejecuta la "función anónima" que se encuentra dentro del evento.
+		// Sintaxis: addEventListener(type, listener)
+		
+		var numero = document.getElementById("numero").value;
+		var resultado= document.getElementById("resultado");
+		
+		var dia;
+		
+		//resultado.innerHTML=dia;
+		
+		switch (parseInt(numero,10)) {
+			case 1:
+				dia="Lunes";
+				break;
+			
+			case 2:
+				dia="Martes";
+				break;
+			
+			case 3:
+				dia="Miércoles";
+				break;
+				
+			case 4:
+				dia="Jueves";
+				break;
+					
+			case 5:
+				dia="Viernes";
+				break;
+				
+			case 6:
+				dia="Sábado";
+				break;
+				
+			case 7:
+				dia="Domingo";
+				break;
+				
+			default:
+				dia="El número introducido es incorrecto";
+			
+	    } // Cierre de switch
+		
+		resultado.innerHTML=dia;
+		
+		}); // cierre de eventlistener
+	</script>
+	
+	</body>
+</html>

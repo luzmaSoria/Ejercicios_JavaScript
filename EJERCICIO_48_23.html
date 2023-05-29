@@ -1,0 +1,83 @@
+﻿<!-- EJERCICIO 48 (EJERCICIO 23) – Pedir un número "de manera infinita", 
+pero que se pueda interrumpir cuando se introduzca la palabra "salir". -->
+
+<!DOCTYPE html>
+
+<html lang="es-ES">
+
+<head>
+
+    <meta charset="UTF-8">
+	<title>Bucle infinito - Solicitar número</title>
+    
+	<style>
+        body {
+            font-family:Arial,sans-serif;
+            text-align:center;
+        }
+		input,button {
+			font-size:20px;
+            margin-top:20px;
+		}
+		#resultado {
+            margin-top:20px;
+            font-weight:bold;
+		}
+    </style>
+
+</head>
+
+<body>
+
+    <h1>Bucle infinito - Solicitar número o para interrumpir "salir"</h1>
+<!--	<label for="numero">Numero (interrumpir = salir)</label> 
+	<input type="text" id="numero"/>  -->
+    <button onclick="solicitarNumero()">Iniciar bucle</button>
+	<div id="resultado"></div>
+</body>
+
+    <script type="text/javascript">
+        function solicitarNumero() {
+          let input;
+//		  const entrada= document.getElementById("numero").value;
+		  const resultado= document.getElementById("resultado");
+		    
+			while (true) {
+			
+				input = prompt("Introduzca un número o 'salir' para detener el bucle:", "");
+     
+				if (isNaN(parseInt(input,10))) {
+					resultado.innerHTML="Por favor, introduzca un número válido.";
+					alert("Por favor, introduzca un número válido." + input);
+					if (input === "salir") {
+						resultado.innerHTML="Eligió salida:";
+						alert("Eligió salida:" + input);
+						break;
+					}
+                } else { 
+                     resultado.innerHTML="Número introducido:";
+					 alert("Número introducido:" + input);
+                } 
+				
+				// Opción 1
+			
+				/* 	if (isFinite(+input)) {
+						console.log("Número introducido:", input);
+					} else {
+						alert("Por favor, introduzca un número válido.");
+					}	
+					
+				//Opción 2 */
+
+				// Se verifica si la variable "input" contiene un número válido y finito. 
+				// Si es así, muestra el número introducido en la consola; 
+				// de lo contrario, muestra una alerta solicitando que se introduzca un número válido.
+				
+				// "isFinite(+input)": Esta función "isFinite()" verifica si el valor proporcionado es un número finito. 
+				// El operador "+" antes de "input" convierte el valor de "input" en un número. 
+				
+            }
+        }
+    </script>
+
+</html>

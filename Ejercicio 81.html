@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang=""es-ES">
+<!-- detectar si se teclean letras del abecedario minúsculas y mayúsculas, incluyendo la eñe-->
+
+<head>
+    <title>Ejercicio 81 event.key onkeydown, on..</title>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            font-family:serif;
+            text-align:center;
+            background-color:gray;
+        }
+ 
+    </style>
+
+</head>
+
+<body>
+    <h1>Ejercicio 81 usar event.key para identificar lo que se teclea (onkeydown, onkeypress, onkeyup)</h1>
+
+    <input type="text" id="entrada">
+    <div id="mensaje"></div>
+
+</body>
+
+<script type="text/javascript">    
+    document.getElementById("entrada").addEventListener("keydown",abecedario);
+    
+    function abecedario() {
+      var letra=event.key;
+      
+     document.getElementById("mensaje").innerText=`Presionaste ${letra}`;
+     
+      return true;
+    }
+    
+
+</script>
+    
+</html>

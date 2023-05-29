@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+	<meta charset="UTF-8">
+	<title>Verificar si un número es positivo, negativo o cero</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			}
+		input, button{
+			font-size: 16px;
+					}
+	</style>
+</head>
+	<body>
+		<h1>Verificar si un número es positivo, negativo o cero</h1>	
+		<input type="number" id="entradaNumero" placeholder="Introduce un número">
+		<button onclick="verificarNumero()">Verificar</button> 
+		<p id="resultado"></p>
+	</body>
+	<script type="text/javascript">
+		function verificarNumero()
+		{
+			const entradaNumero = document.getElementById('entradaNumero'); 
+			const resultado = document.getElementById('resultado'); 
+			
+			const numero = parseInt(entradaNumero.value, 10);
+			
+			if (numero > 0) {
+			 resultado.innerHTML = 'El número introducido es positivo';
+			} else if (numero < 0) { 
+				resultado.innerHTML = 'El número introducido es negativo';
+			} else { 
+			    resultado.innerHTML = 'El número introducido es cero';
+			}
+	    }
+	</script>
+
+
+</html>

@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+	<meta charset="UTF-8">
+	<meta name="generator" content="jsitor.com">
+	<title>Ejemplo 69 Reduce</title>
+
+</head>
+
+<body>
+	<h1>Ejemplo 69 Reduce</h1>	
+   	<h2>Suma de cuadrados de números</h2>
+	
+	<div id="numeros"></div>
+	<div id="resultado"></div>
+		
+<script type="text/javascript">
+	const numbers=[5,4,8,6,2];
+	//let suma=0;
+	const reducedValue= numbers.reduce((suma, number)=>(suma+number**2),0);  //0 es el valor inicial
+	
+	console.log(reducedValue);
+	
+	document.getElementById("numeros").innerText='Los números del array son ' + numbers.join();
+	document.getElementById('resultado').innerText='La suma de los cuadrados = ' + reducedValue;
+</script>
+
+</body>	
+	
+</html>

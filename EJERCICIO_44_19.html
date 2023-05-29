@@ -1,0 +1,63 @@
+﻿<!-- EJERCICIO 44 (EJERCICIO 19) – determinar si un número es o no primo 
+(número primo es un número natural mayor que 1 que solo es divisible entre 1 y sí mismo). -->
+
+<!DOCTYPE html>
+
+<html lang="es-ES">
+
+<head>
+
+	<meta charset="UTF-8">
+	<title>Verificador de números primos</title>
+
+	<style>
+		body {
+			font-family:Arial,sans-serif;
+			text-align:center;
+		}
+		input,button {
+			font-size:20px;
+		}
+		#resultado {
+            margin-top:20px;
+            font-weight:bold;
+        }
+	</style> <!-- 1em = 16px -->
+
+</head>
+
+<body>
+
+  <h1>Verificador de números primos</h1>
+  <input type="number" id="numero" placeholder="Introduzca un número">
+  <button onclick="verificarPrimo()">Verificar</button>
+  <p id="resultado"></p>
+
+  <script>
+    function verificarPrimo() {
+      const numero = document.getElementById("numero").value;
+      const resultado = document.getElementById("resultado");
+      let esPrimo = true;
+
+      if (numero < 2) {
+        esPrimo = false;
+      } else {
+        for (let i = 2; i < numero; i++) {
+          if (numero % i === 0) {
+            esPrimo = false;
+            break;
+          }
+        }
+      }
+
+      if (esPrimo) {
+        resultado.innerHTML = "El número " + numero + " es primo.";
+      } else {
+        resultado.innerHTML = "El número " + numero + " no es primo.";
+      }
+    }
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+﻿<!-- EJERCICIO 83 Trabajar con ventanas y onresize-->
+
+<!DOCTYPE html>
+
+<html lang="es-ES">
+
+<head>
+
+    <meta charset="UTF-8">
+    <title>ventanas</title>
+
+    <style>
+        body {
+            font-family:serif;
+            text-align:center;
+        }
+        #resultado {
+            font-size:40px;
+            font-weight:bold;
+            margin-top:20px;
+			margin-bottom:20px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h1>Ejercicio 83 Ventanas con onresize</h1>
+    <h6>ONRESIZE</h6>
+
+        <div id="resultado"></div>
+
+        <iframe width="200" height="384" 
+		    src="chica.jpg" 
+		    title="chica" 
+		frameborder="1"></iframe>
+ 
+	<script type="text/javascript">
+       var ventana=window;
+       
+     //  ventana.onmove=function(){
+     //       console.log('La ventana se movió');
+     //  }
+
+       ventana.onresize=function(){
+        document.getElementById("resultado").innerHTML='Ancho= ' + ventana.innerWidth + ' Alto= ' + ventana.innerHeight;       
+        
+        console.log("La ventana ha cambiado de tamaño");
+       }
+        
+       document.getElementById("resultado").innerHTML='Ancho= ' + ventana.innerWidth + ' Alto= ' + ventana.innerHeight;       
+        
+	</script> 
+	
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+	<meta charset="UTF-8">
+	<title>Generar la tabla de multiplicar (1-10)</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			}
+		input, button{
+			font-size: 16px;
+					}
+	</style>
+</head>
+
+	<body>
+		<h1>Generar la tabla de multiplicar (1-10)</h1>	
+		<input type="number" id="Numero" placeholder="Número entre 1 y 10">
+		<button onclick="tablaN()">Generar</button> 
+		
+		<p id="resultado1"></p></br>
+	<!--	<p id="resultado2"></p></br>
+		<p id="resultado3"></p></br>
+		<p id="resultado4"></p></br>
+		<p id="resultado5"></p></br>
+		<p id="resultado6"></p></br>		
+		<p id="resultado7"></p></br>
+		<p id="resultado8"></p></br>
+		<p id="resultado9"></p></br>
+		<p id="resultado10"></p></br>	-->	
+	</body>
+	
+	<script type="text/javascript">
+		function tablaN() {		
+			const Numero = document.getElementById('Numero'); 
+			const resultado1 = document.getElementById('resultado1'); 
+			
+			const num = parseInt(Numero.value, 10);
+			var rr="";
+			
+			if (num < 1 || num > 10) 
+			{	
+				resultado1.innerHTML = 'Capture un número válido 1 al 10';
+			}
+			else {
+			
+				// resultado1.innerHTML = 'debe entrar al ciclo';
+			
+				for (var i=1;i<=10;i++) {
+						
+					rr = rr.concat(num, " * ",i," = ",num*i,"<br>");
+			
+					resultado1.innerHTML=rr;
+			
+				} // cierre de for
+			} // cierre de else
+	    } // Cierre de funcion
+	</script>
+
+
+</html>

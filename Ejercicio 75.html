@@ -1,0 +1,104 @@
+﻿<!-- EJERCICIO 82 Utilizar y detectar los eventos de formulario-->
+
+<!DOCTYPE html>
+
+<html lang="es-ES">
+
+<head>
+
+    <meta charset="UTF-8">
+    <title>Eventos de formulario</title>
+
+    <style>
+        body {
+            font-family:serif;
+            text-align:center;
+        }
+        button {
+            font-size:12px;
+			font-weight:bold;
+            padding:10px 20px;
+            margin:10px; // 1em =  16px
+        }
+        img {
+            width:150px;
+            height:150px;
+        }
+        #resultado {
+            font-size:40px;
+            font-weight:bold;
+            margin-top:20px;
+			margin-bottom:20px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h1>Eventos de formulario</h1>
+    <h6>onchange para nombre y correo</h6>
+    <h6>onblur, cuando se quita el foco de nombre, correo y contraseña</h6>
+    <h6>onfocus, resaltar para nombre o correo</h6>
+    <h6>onselect: para resaltar en área de texto</h6>
+
+    <img src='chica.jpg' alt='chica.jpg' title='chica.jpg' onClick="onClickEvent()">
+    
+    <img src='travel.jpg' alt='travel.jpg' title='travel.jpg' onDblClick="onDblClickEvent()">
+    
+    <img src='mariposa.jpg' alt='mariposa.jpg' title='mariposa.jpg' onMouseDown="onMouseDownEvent()" onMouseMove="onMouseMoveEvent()" onMouseUp="onMouseUpEvent()">
+  
+    <img src='actitud.jpg' alt='actitud.jpg' title='actitud.jpg' onMouseOver="onMouseOverEvent()" onMouseOut="onMouseOutEvent()">
+
+<!----
+    <button id="movimiento"><img alt='chica.jpg' src='chica.jpg' title='chica.jpg' onclick=”this.src='chica.jpg';” ondblclick=”this.src='travel.jpg';”></button>
+    <button id="movimiento"><img alt='actitud.jpg' src='actitud.jpg' title='actitud.jpg' onmouseout=”this.src='actitud.jpg';” onmouseover=”this.src='wilde.jpg';”></button>
+    <button id="movimiento"><img alt='mariposa.jpg' src='mariposa.jpg' title='mariposa.jpg' onmousedown=”this.src='mariposa.jpg';” onmouseleave=”this.src='running.jpg';”></button>
+-->  
+    <div id="resultado"></div>
+
+	<script>
+            function onClickEvent(){
+                mensaje="el usuario hizo clic";
+                alert(mensaje);
+                resultado.innerHTML=mensaje;
+            }
+            function onDblClickEvent(){
+                mensaje="el usuario hizo Doble clic";
+                alert(mensaje);
+                resultado.innerHTML=mensaje;
+            }
+            function onMouseDownEvent(){
+                mensaje="el usuario hizo Mouse DOWN";
+                alert(mensaje);
+                resultado.innerHTML=mensaje;
+            } 
+            function onMouseMoveEvent(){
+                mensaje="el usuario hizo Mouse MOVE";
+                alert(mensaje);
+                resultado.innerHTML=mensaje;
+            } 
+            function onMouseUpEvent(){
+                mensaje="el usuario hizo Mouse UP";
+                alert(mensaje);
+                resultado.innerHTML=mensaje;
+            } 
+            function onMouseOverEvent(){
+                mensaje="el usuario hizo Mouse OVER";
+                alert(mensaje);
+            } 
+            function onMouseOutEvent(){
+                mensaje="el usuario hizo Mouse OUT";
+                alert(mensaje);
+                resultado.innerHTML=mensaje;
+            } 
+
+            let mensaje;
+            const resultado=document.getElementById("resultado");	
+            
+             
+	</script>
+	
+</body>
+
+</html>

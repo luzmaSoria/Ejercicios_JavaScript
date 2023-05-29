@@ -1,0 +1,91 @@
+﻿<!-- EJERCICIO 82 Utilizar y detectar los eventos de formulario-->
+
+<!DOCTYPE html>
+
+<html lang="es-ES">
+
+<head>
+
+    <meta charset="UTF-8">
+    <title>Eventos de formulario</title>
+
+    <style>
+        body {
+            font-family:serif;
+        }
+        button {
+            font-size:12px;
+			font-weight:bold;
+            padding:10px 20px;
+            margin:10px; // 1em =  16px
+        }
+        img {
+            width:150px;
+            height:150px;
+        }
+        #resultado {
+            font-size:40px;
+            font-weight:bold;
+            margin-top:20px;
+			margin-bottom:20px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h1>Eventos de formulario</h1>
+    <h6>onchange para nombre y correo</h6>
+    <h6>onblur, cuando se quita el foco de nombre, correo y contraseña</h6>
+    <h6>onfocus, resaltar para nombre o correo</h6>
+    <h6>onselect: para resaltar en área de texto</h6>
+    <h6>onsubmit para envíar el formulario</h6>
+
+    <form action="/archivoDestino.php" onsubmit="alert('Enviado')" onreset="alert('Formulario restablecido')">
+        <label for="nombre">Nombre:</label>
+    <!--    <input type="text" id="nombre" value="" onchange="alert('el valor de nombre ha cambiado')" onblur="alert('el foco de nombre se ha perdido')" onfocus="alert('El nombre ha recibido el foco')">
+     -->
+        <input type="text" id="nombre" value="" onchange="cambioNombre()" onblur="focoperdido()" onfocus="focorecibido()">
+    </br></br>
+        <label for="correo:">Correo-e:</label>
+        <input type="email" id="correo" value="" onchange="alert('elvalor de correo ha cambiado')" onblur="alert('el foco del correo se ha perdido')" onfocus="alert('El correo ha recibido el foco')">
+        </br></br>
+        <label for="contrasena:">Contraseña:</label>
+        <input type="password" id="contrasena" value="" onblur="alert('el foco de contraseña se ha perdido')">
+        </br></br>
+        <label for="comentario">Comentario:</label>
+        <textarea id="comentario" name="comentario" onselect="alert('texto ha sido seleccionado')"></textarea>       
+        </br></br>
+        <button type="submit" value="Enviar" onclick="Enviar()">Enviar</button>
+       
+        <button type="reset" value="Restablecer" onclick="Restablecer()">Restablecer</button>
+         
+    </form>
+    
+	<script type="text/javascript">
+            
+        function Enviar(){
+            alert('El formulario se ha enviado');
+        }	
+            
+        function Restablecer(){
+            alert('el formulario se restablecerá');
+        }   
+        
+        function cambioNombre(){
+            console.log('El valor de nombre ha cambiado');
+        }
+
+        function focoperdido(){
+            console.log('el nombre perdió el foco');
+        }
+
+        function focorecibido(){
+            console.log('El nombre ha recibido el foco');
+        }
+	</script>
+	
+</body>
+
+</html>

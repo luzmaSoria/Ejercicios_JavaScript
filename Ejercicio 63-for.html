@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="generator" content="jsitor.com">
+	<title>Ejemplo 63 ordenar</title>
+	<style>
+		body{
+		background-color:grey;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>Ejemplo 63 Ordenar</h1>	
+   	
+	<div id="arreglo">Origen</div>
+	<div id="frecuencias">Resul</div>
+	</br></br>
+	<button onclick="burbuja()">Ordena</button>
+			
+<script type="text/javascript">
+function burbuja(){
+
+	const items=[10,9,8,7,6,5,4,3,2,1];
+	const longitud=[items.length];
+	var intercambio=1;
+	console.log(items);
+	document.getElementById("arreglo").innerHTML='El array es ' + items.join();	
+	
+	while (intercambio = 1) {
+		for (let i=0; i<longitud-1; i++) {
+			item=items[i];
+			siguiente=items[i+1];
+			console.log(item,siguiente);
+			
+			if (i<(longitud-2)) {
+			
+				if (item > siguiente) {
+					intercambio=1;
+			
+					items[i] = siguiente;
+					items[i+1]=item;
+				}
+				else {
+					intercambio=0;
+				}
+			}
+		}
+	}
+			
+	document.getElementById("frecuencias").innerText='El array es ' + items.join();
+	
+}	
+</script>
+
+</body>	
+	
+</html>

@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+	<meta charset="UTF-8">
+	<meta name="generator" content="jsitor.com">
+	<title>Ejemplo 66 forEach</title>
+
+</head>
+
+<body>
+	<h1>Ejemplo 66 forEach con ul</h1>	
+   	
+	<div id="app">
+		<ul><!--Contenedor para mostrar los productos --></ul>
+	</div>
+
+	
+<script type="text/javascript">
+	const products=[
+	{title:'Hamburguesa', price:15},
+	{title:'Pizza',price:12},
+	{title:'Perrito',price:9}
+	];
+	const app= document.getElementById("app");
+	const ul= app.querySelector("ul");
+	
+	products.forEach(product => {
+		const li= document.createElement("li");
+		li.innerHTML=`${product.title}---<span>${product.price}€</span>`;
+		ul.appendChild(li);
+		});
+	
+</script>
+
+</body>	
+	
+</html>

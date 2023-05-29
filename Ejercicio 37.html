@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+	<meta charset="UTF-8">
+	<title>Determinar si un número es par o impar</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			}
+		input, button{
+			font-size: 16px;
+					}
+	</style>
+</head>	
+	<body>
+		<h1>Determinar si un número es par o impar</h1>	
+		<input type="number" id="entradaNumero" placeholder="Introduce un número">
+		<button onclick="determinaNumero()">Determinar</button> 
+		<p id="resultado"></p>
+	</body>
+	<script type="text/javascript">
+		function determinaNumero()
+		{
+			const entradaNumero = document.getElementById('entradaNumero'); 
+			const resultado = document.getElementById('resultado'); 
+			
+			const numero = parseInt(entradaNumero.value, 10);
+			
+			if (numero % 2 === 0) {
+			 resultado.innerHTML = 'El número introducido es par';
+			} else { 
+			    resultado.innerHTML = 'El número introducido es impar';
+			}
+	    }
+	</script>
+
+
+</html>

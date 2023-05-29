@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang=""es-ES">
+<!-- detectar si se teclean las vocales minúsculas y mayúsculas-->
+
+<head>
+    <title>Ejercicio 77-b onkeydown, on..</title>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            font-family:serif;
+            text-align:center;
+            background-color:gray;
+        }
+ 
+    </style>
+
+</head>
+
+<body>
+    <h1>Ejercicio 77-b onkeydown, onkeypress, onkeyup</h1>
+
+   <!-- <input type="text" id="entrada" onkeydown="vocales();"> -->
+    <input type="text" id="entrada">
+    <div id="mensaje"></div>
+
+</body>
+
+<script type="text/javascript">
+    let texto='';
+    document.getElementById("entrada").addEventListener("keydown",vocales);
+    
+    function vocales() {
+      texto='';  
+      var letra=event.key.toLowerCase();
+      if ((letra==="a") || (letra==="e") || (letra==="i") || (letra==="o") || (letra==="u")) {
+        texto="Ha capturado la vocal " + letra;
+        document.getElementById("mensaje").innerText=texto;
+      } 
+     // else {
+     //   texto="Ha capturado algo diferente a una vocal";
+     //   document.getElementById("mensaje").innerText=texto;
+     // }
+      return true;
+    }  
+
+</script>
+    
+</html>

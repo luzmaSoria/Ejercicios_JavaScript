@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejemplo 65 de callback</title>
+	<style>
+	button{
+		font-size: 16px;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>Ejemplo 65 de callback</h1>	
+    <button id="callback-btn">Clic</button></br>
+	
+	<p id="resultado"></p>
+
+<script>
+	const resultado=document.getElementById("resultado");	
+	document.querySelector("#callback-btn");
+	document.addEventListener("click",function(){
+	resultado.innerHTML="El usuario hizo clic";
+	alert("El usuario hizo clic.");
+		});
+	
+</script>
+
+</body>	
+	
+</html>

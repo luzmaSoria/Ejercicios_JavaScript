@@ -1,0 +1,53 @@
+﻿<!-- EJERCICIO 11 – Crear un algoritmo, en pseudocódigo, que pida introducir un número y que determine si es positivo, negativo o cero: si el número introducido es positivo, se mostrará el mensaje "El número introducido es positivo", si es negativo, se visualizará "El número introducido es negativo", y, en el caso de que el número introducido sea cero, se mostrará "El número introducido es cero". -->
+
+<!-- Se trata de un código HTML que incluye JavaScript y CSS. -->
+
+<!DOCTYPE html> <!-- Se declara el tipo de documento como HTML5 con <!DOCTYPE html> -->
+
+<html lang="es"> <!-- Se define el elemento raíz <html> con el atributo lang="es" indicando que el contenido está en español. -->
+
+<head> <!-- Dentro del elemento <head>: -->
+
+  <meta charset="UTF-8"> <!-- Se especifica la codificación de caracteres como UTF-8 con <meta charset="UTF-8"> -->
+  
+  <title>Verificar si un número es positivo, negativo o cero</title> <!-- Se establece el título de la página con <title>Verificar si un número es positivo, negativo o cero</title> -->
+  
+  <!-- Se incluyen estilos CSS para dar formato a los elementos de la página. -->
+  <style> <!-- La etiqueta <style> se utiliza para incluir código CSS dentro de un documento HTML. El contenido dentro de las etiquetas <style> es interpretado como código CSS. -->
+    body { <!-- Esta parte del código es un selector CSS que apunta al elemento <body> de un documento HTML. Las reglas de estilo que se encuentren entre las llaves {} se aplicarán al elemento <body> y a todos sus elementos hijos, a menos que se especifique lo contrario. -->
+      font-family: Arial, sans-serif; <!-- Esta declaración de estilo indica que el tipo de fuente (font-family) para el elemento <body> y sus elementos hijos debe ser Arial. Si Arial no está disponible, entonces se utilizará una fuente sans-serif genérica. -->
+    }
+    input, button { <!-- Este selector CSS apunta a los elementos <input> y <button> de un documento HTML. Las reglas de estilo que se encuentren entre las llaves {} se aplicarán a estos elementos. -->
+      font-size: 16px; <!-- Esta declaración de estilo indica que el tamaño de fuente (font-size) para los elementos <input> y <button> debe ser de 16 píxeles. -->
+    }
+  </style>
+  
+</head>
+
+<body> <!-- Dentro del elemento <body>: -->
+
+  <h1>Verificar si un número es positivo, negativo o cero</h1> <!-- Se crea un título <h1>Verificar si un número es positivo, negativo o cero</h1> -->
+  <input type="number" id="entradaNumero" placeholder="Introduce un número"> <!-- Se crea un campo de entrada de tipo número con <input type="number" id="entradaNumero" placeholder="Introduce un número"> -->
+  <button onclick="verificarNumero()">Verificar</button> <!-- Se crea un botón con <button onclick="verificarNumero()">Verificar</button> que llama a la función verificarNumero() cuando se hace clic en él. -->
+  <p id="resultado"></p> <!-- Se crea un elemento <p id="resultado"></p> donde se mostrará el resultado. -->
+
+  <script> <!-- Dentro de un elemento <script> se define la función verificarNumero(): -->
+    function verificarNumero() {
+      const entradaNumero = document.getElementById('entradaNumero'); <!-- Se obtiene el valor del campo de entrada y se almacena en la constante entradaNumero con const entradaNumero = document.getElementById('entradaNumero'); -->
+      const resultado = document.getElementById('resultado'); <!-- Se obtiene el elemento donde se mostrará el resultado y se almacena en la constante resultado con const resultado = document.getElementById('resultado'); -->
+      const numero = parseInt(entradaNumero.value, 10); <!-- Se convierte el valor del campo de entrada a un número entero y se almacena en la constante numero con const numero = parseInt(entradaNumero.value, 10); -->
+	  <!-- Dentro de la función verificarNumero(), se utilizan condicionales para determinar si el número es positivo, negativo o cero: -->
+      if (numero > 0) { <!-- Si numero > 0, se muestra el mensaje "El número introducido es positivo" en el elemento resultado. -->
+        resultado.innerHTML = 'El número introducido es positivo';
+      } else if (numero < 0) { <!-- Si numero < 0, se muestra el mensaje "El número introducido es negativo" en el elemento resultado. -->
+        resultado.innerHTML = 'El número introducido es negativo';
+      } else { <!-- Si no se cumple ninguna de las condiciones anteriores, se muestra el mensaje "El número introducido es cero" en el elemento resultado. -->
+        resultado.innerHTML = 'El número introducido es cero';
+      }
+	  <!-- Cuando el usuario introduce un número en el campo de entrada y hace clic en el botón "Verificar", la función verificarNumero() se ejecuta y muestra el resultado en la página web. -->
+    }
+  </script>
+  
+</body>
+
+</html>

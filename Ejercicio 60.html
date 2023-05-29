@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+  <meta charset="UTF-8">
+  <title>Números del 1 al 10 ejer.59 while</title>
+
+  <style>
+    body{
+      font-family:Arial,sans-serif;
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <h1>Validación de edad</h1>
+  <p>Por favor, introduzca su edad:</p>
+  <input type="text" id="edad" />
+  <button onclick="validarEdad()">Comprobar</button>
+
+  <script> 
+	function validarEdad() {
+		var edad = parseInt(document.getElementById("edad").value);
+		while (edad < 1 || edad > 17) {
+			alert("Edad no válida. Introduzca una edad entre 1 y 17 años.");
+			edad = parseInt(prompt("Por favor, introduzca su edad nuevamente:"));
+		}
+		alert("¡Gracias! Su edad es " + edad + " años.");	
+	}	
+  </script>
+
+</body>
+
+</html>

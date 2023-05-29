@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+  <meta charset="UTF-8">
+  <title>Lista de alumnos</title>
+
+  <style>
+    body {
+      font-family:Arial,sans-serif;
+	  //text-align:center;
+    }
+    ul {
+      list-style-type:none;
+      padding:0;
+    }
+    li {
+      margin-bottom:10px;
+      background-color:#f0f0f0;
+      padding:10px;
+      border-radius:10px;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <h1>Alumnos:</h1>
+  <ul id="listaAlumnos"></ul>
+
+  <script>
+    const alumnos = [
+      "Eduardo",
+      "Ilsina",
+      "Javier",
+      "José Luis",
+      "George Jeymi",
+      "Raúl",
+      "María del Valle",
+      "Nathaly Paola",
+      "Ariana",
+      "Luz María",
+      "Alejandro"
+    ];
+
+    alumnos.push(""); // Se agrega un nuevo elemento al final del array para utilizarlo como elemento temporal.
+    alumnos[alumnos.length - 1] = alumnos[3];
+    alumnos[3] = alumnos[6];
+    alumnos[6] = alumnos[alumnos.length - 1];
+    alumnos.pop(); // Se elimina el último elemento que usamos como elemento temporal.
+
+    const listaAlumnos = document.getElementById("listaAlumnos");
+
+    alumnos.forEach(alumno => {
+      const listItem = document.createElement("li");
+		// "createElement()" es un método que crea un nuevo elemento HTML del tipo especificado entre comillas, en este caso ("li") que representa un elemento de lista, y lo guarda en la variable "listItem".
+      listItem.innerHTML = alumno;
+		// El contenido del elemento HTML "listItem" se actualizará con el valor de la variable "alumno".
+      listaAlumnos.appendChild(listItem);
+		/* "appendChild()" es un método que se utiliza para agregar un nuevo nodo(elemento) como "último hijo" de un nodo padre, siendo éste "listaAlumnos".
+		Por lo tanto, esta línea agrega el elemento "listItem" al final de la lista "listaAlumnos". */
+    });
+	
+	/* "alumnos.forEach(alumno => {});" Es una "Función de Flecha" (Arrow Function) en JavaScript que se utiliza con el método "forEach()" en un array llamado "alumnos".
+
+	El método "forEach()" se utiliza para ejecutar una función específica en cada elemento de un array.
+
+	En este caso, la Función de Flecha "(alumno) => {}" es la función que se ejecutará en cada elemento del array "alumnos".
+
+	La Función de Flecha toma un argumento, alumno, que representa el elemento actual del array en cada iteración.
+
+	El código que se ejecutará para cada elemento del array se encuentra dentro de las llaves {}.
+
+	Sin embargo, en este caso, no hay ningún código dentro de las llaves, lo que significa que no se realizará ninguna acción en cada elemento del array. */
+
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang=""es-ES">
+<!-- detectar si se teclean letras del abecedario minúsculas y mayúsculas, incluyendo la eñe-->
+
+<head>
+    <title>Ejercicio 78 onkeydown, on..</title>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            font-family:serif;
+            text-align:center;
+            background-color:gray;
+        }
+ 
+    </style>
+
+</head>
+
+<body>
+    <h1>Ejercicio 78 onkeydown, onkeypress, onkeyup</h1>
+
+    <div id="mensaje"></div>
+
+</body>
+
+<script type="text/javascript">
+    function xx(letra) {
+        const abcdmin=["a","b","c","d","e","f","g","h","i","j","k","l","m","n","ñ","o","p","q","r","s","t","u","v","w","x","y","z"];
+        const abcdmay=["A","B","C","D","E","F","G","H","I","J","K","L","M","N","Ñ","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+
+        for (let i=0; i< abcdmin.length; i++){
+            if (letra === abcdmin[i]){
+                alert('captura de una minúscula');
+            }
+
+        }
+
+        for (let i=0; i< abcdmay.length; i++){
+            if (letra === abcdmay[i]){
+                alert('captura de una mayúscula');
+            }
+
+        }
+    }
+        document.addEventListener("keydown",function(event) {
+        var letra=event.key;
+        xx(letra);
+    });
+    
+    
+
+</script>
+    
+</html>

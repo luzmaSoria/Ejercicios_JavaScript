@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang=""es-ES">
+<head>
+    <title>Ejercicio 76 onload, on..</title>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            font-family:serif;
+            text-align:center;
+            background-color:gray;
+        }
+        button {
+            font-size:12px;
+			font-weight:bold;
+            padding:10px 20px;
+            margin:10px; // 1em =  16px
+        }
+        #mensaje {
+            font-size:40px;
+            font-weight:bold;
+            margin-top:20px;
+			margin-bottom:20px;
+        }
+        img {
+            width:200px;
+            height:200px;
+            
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1>Ejercicio 76 onload, onbeforeunload, onunload</h1>
+
+	<h4>onload --La página ha cargado completamente-- </h4>
+	<h4>onbeforeunload --Estás seguro de que quieres salir?-- </h4>
+	<h4>window.onunload --La página se está descargando-- </h4>
+	
+    <img alt='actitud.jpg' src='actitud.jpg' title='actitud.jpg'>
+ 
+<!--    <button onclick="accion1()">Cargar pagina</button>
+    <button onclick="accion2()">Abandonar pagina</button>
+    <button onclick="accion3()">Descagar pagina</button> -->
+ 
+    <button onclick="despedirse()">Despedirse</button>
+	<div id="mensaje"></div>
+</body>
+
+<script type="text/javascript">
+ /*   function accion1() { 
+        window.onload=function() {alert('La página ha cargado completamente');}
+     
+    }  
+    function accion2() {   
+        window.onbeforeunload=function() {return('Estás seguro de que quieres salir? ');}
+       
+    } 
+    function accion3() {
+        window.onunload=function() {alert('La página se está descargando!');}
+        window.close;
+   }   
+   */
+  
+    window.onload=function() {alert('La página ha cargado completamente');}
+
+    window.onbeforeunload=function() {return('Qué tan seguro estás de huír? ');}
+
+   // window.onunload=function() {alert('La página se está descargando!');
+   // window.close; }
+
+    function despedirse() {
+        alert('Hasta la proxima amigos!');
+		document.getElementById("mensaje").innerTxt="Hasta la próxima Amigos!";
+        window.close();
+    }
+
+</script>
+    
+</html>

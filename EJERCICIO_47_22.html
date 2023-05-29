@@ -1,0 +1,62 @@
+﻿<!-- EJERCICIO 47 (EJERCICIO 22) – Pedir un número: 
+si el número introducido es negativo, se interrumpirá el ciclo de repeticiones y el programa; 
+si el número introducido es positivo, se calculará el doble del número introducido y se mostrará en pantalla. 
+Si el usuario sigue introduciendo números positivos, el programa seguirá repitiendo el proceso de pedir un número y calcular su doble,
+hasta que se pulse el número 0, momento en el que finalizará el programa. -->
+
+<!DOCTYPE html>
+
+<html lang="es-ES">
+
+<head>
+
+    <meta charset="UTF-8">
+    <title>Duplicar numero</title>
+
+    <style>
+        body {
+            font-family:Arial,sans-serif;
+            text-align:center;
+        }
+		input,button {
+			font-size:20px;
+            margin-top:20px;
+		#resultado {
+            margin-top:20px;
+			font-style:italic;
+            font-weight:bold;
+		}
+    </style>
+
+</head>
+
+<body>
+
+    <h1>Calculadora del doble, 0 para terminar</h1>
+    <p>Los números negativos interrumpen el programa</p>
+    <label for="numero">Introduce un número</label> 
+	<input type="number" id="numero" />
+    <button onclick="calcularDoble()">Calcular doble</button>
+    <p id="resultado"></p>
+
+    <script>
+        function calcularDoble() {
+            const numero = parseInt(document.getElementById("numero").value);
+            const resultado = document.getElementById("resultado");
+
+            if (numero < 0) {
+                resultado.innerHTML = "Se ha interrumpido el ciclo de repeticiones.";
+                return;
+            } else if (numero === 0) {
+                resultado.innerHTML = "El programa ha finalizado.";
+				return;
+            } else {
+                let doble = numero * 2;
+                resultado.innerHTML = "El doble de " + numero + " es " + doble;
+            }
+        }
+    </script>
+
+</body>
+
+</html>

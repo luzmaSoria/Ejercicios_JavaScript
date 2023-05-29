@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejemplo funciones callback</title>
+</head>
+<body>
+	<h1>Ejemplo de callback</h1>	
+    <button onclick()="mainFunction()">Pulsar boton</button>
+</body>	
+	
+<script type="text/javascript">
+			
+	function mainFunction(callback) {
+	  //console.log("Performing operation..."); 
+	  alert("Performing operation...");
+	  // Use setTimeout to simulate an asynchronous operation
+	  setTimeout(function() {
+	    callback("Operation complete");
+	  }, 5000);
+	} 
+	 
+	// Define the callback function
+	function callbackFunction(result) {
+	  //console.log("Result: " + result);
+	  alert("Result: " + result);
+	}
+	
+ 	
+	// Call the main function with the callback function
+	mainFunction(callbackFunction);   
+
+	//This code is contributed by Veerendra Singh Rajpoot
+	
+</script>
+	
+</html>

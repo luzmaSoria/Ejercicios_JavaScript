@@ -1,0 +1,35 @@
+﻿<!--Ejercicio 87 ejecución de un script diferido-->
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+  <meta charset="UTF-8">
+  <title>Fn setTimeOut</title>
+  <style>
+    body{
+        font-family:Arial,sans-serif;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Función setTimeOut</h1>
+
+  <script languages="JavaScript" type="text/javascript">
+    
+    function fnA(){
+        console.log("Función A ejecutada");
+    }
+
+    function fnB(){
+        console.log("Función B ejecutada");
+    }
+    setTimeout(fnA,5000);
+    setTimeout(fnB,10000);
+  </script>
+  
+</body>
+
+</html>

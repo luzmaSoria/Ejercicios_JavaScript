@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+	<meta charset="UTF-8">
+	<title>Notas de examen</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			}
+		input, button{
+			font-size: 16px;
+					}
+	</style>
+</head>	
+	<body>
+		<h1>Notas de examen</h1>	
+		<input type="number" id="entradaNota" placeholder="Introduce tu nota">
+		<button onclick="evaluarNota()">Evaluar</button> 
+		<p id="resultado"></p>
+	</body>
+	<script type="text/javascript">
+		function evaluarNota()
+		{
+			const entradaNota = document.getElementById('entradaNota'); 
+			const resultado = document.getElementById('resultado'); 
+			
+			const nota = parseInt(entradaNota.value, 10);
+			
+			if (nota >= 0 && nota <= 20) 
+			{
+				if (nota >= 10) {
+					resultado.innerHTML = 'Felicitaciones!! Buena nota!';
+				} else { 
+					resultado.innerHTML = 'Debes esforzarte más';
+						}
+			}
+			else {
+				resultado.innerHTML='Error: Introduzca una nota válida';
+				}
+	    }
+	</script>
+
+
+</html>

@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+	<meta charset="UTF-8">
+	<meta name="generator" content="jsitor.com">
+	<title>Ejemplo 74 Reduce y freq</title>
+
+</head>
+
+<body>
+	<h1>Ejemplo 74 Reduce y frecuencias con random</h1>	
+   	
+	<div id="arreglo"></div>
+	<div id="frecuencias"></div>
+			
+<script type="text/javascript">
+	const items=Array.from({length:8},()=>Math.floor(Math.random() * 10)+1);
+	//const longitud=20;
+	
+	// for (let i=0; i<longitud;i++)
+	// { item=Math.floor(Math.random()*10)+1;
+	// items.push(item);
+	// }
+	
+	console.log(items);
+	
+	const frecuencias=items.reduce((objeto, elemento)=> {
+	if (!objeto[elemento]){
+		objeto[elemento]=1;
+	} else {
+		objeto[elemento]=objeto[elemento]+1;
+	}
+	return objeto
+	},{});
+	
+	console.log(frecuencias);
+	
+	document.getElementById("arreglo").innerText='El array aleatorio es ' + items.join();
+	document.getElementById("frecuencias").innerText='Las frec. del array son ' + frecuencias;
+	
+</script>
+
+</body>	
+	
+</html>

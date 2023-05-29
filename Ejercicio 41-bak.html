@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+	<meta charset="UTF-8">
+	<title>Pedir números, sumarlos hasta introducir 0</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			}
+		input, button{
+			font-size: 16px;
+					}
+	</style>
+</head>
+
+	<body>
+		<h1>Pedir números, sumarlos hasta introducir 0</h1>	
+		<input type="number" id="Numero" placeholder="Introduzca un número, 0 para sumar y salir">
+		<button onclick="tablaN()">Sumar</button> 
+		
+		<div id="resultado1"></div> </br>
+			
+	</body>
+	
+	<script type="text/javascript">
+		let numeros=[];
+		let sumaT=0;
+		
+		function tablaN() {		
+			const Numero = document.getElementById('Numero'); 
+			const resultado1 = document.getElementById('resultado1'); 
+			
+			const num = parseInt(Numero.value, 10);
+			
+			if (num === 0) 
+			{	
+				for (let i=0; i< numeros.length;i++) {
+				sumaT += numeros[i];
+			}
+				resultado1.innerHTML = 'Suma= ' + sumaT;
+				}
+			else {
+				
+				numeros.push(num);
+				
+		
+			} // cierre de else
+			
+			document.getElementById('Numero').value = "";
+	    } // Cierre de funcion
+	</script>
+
+
+</html>

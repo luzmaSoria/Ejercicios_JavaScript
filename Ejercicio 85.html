@@ -1,0 +1,54 @@
+﻿<!-- Ejercicio 85 función ONERROR -->
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+  <meta charset="UTF-8">
+  <title>onerror</title>
+  
+  <style>
+    #drag {
+      width:100px;
+      height:100px;
+      /*background-color:blue; 
+      color:white; */
+      text-align:center;
+      padding-top:30px;
+      cursor:move;
+	}
+    #drop {
+      width:200px;
+      height:100px;
+      background-color:red;
+      color:white;
+      text-align:center;
+      padding-top:60px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <img id="drag" draggable="true" src="mariposa2.jpg" alt="mariposa.jpg"></img>
+  <div id="drop">¡Suéltame aquí!</div>
+		
+  <script type="text/javascript">
+    const imagen=document.getElementById('drag');
+    imagen.onerror =function(message,source,lineno,colno,error) {
+        console.log("Ha ocurrido un error:");
+        console.log("Mensaje: " + message);
+        console.log("Fuente: "+source);
+        console.log("Línea: "+lineno);
+        console.log("Columna: " +colno);
+        console.log("Error: " +error);
+        alert('Error al cargar la imagen');
+        imagen.src="travel.jpg";
+    }
+
+  </script>
+
+</body>
+
+</html>

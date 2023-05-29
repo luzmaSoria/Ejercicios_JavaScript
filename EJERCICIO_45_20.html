@@ -1,0 +1,54 @@
+﻿<!-- EJERCICIO 45 (EJERCICIO 20) – Generar las tablas de multiplicar del 1 al 10. -->
+
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+    <title>Tablas de multiplicar</title>
+    
+	<style>
+		body {
+			font-family:Arial,sans-serif;
+			text-align:center;
+		}
+		input,button {
+			font-size:20px;
+			margin-top:20px;
+		}
+		#resultado {
+            margin-top:20px;
+            font-weight:bold;
+        }
+	</style> <!-- 1em = 16px -->
+	
+</head>
+
+<body>
+    
+	<h1>Tablas de multiplicar</h1>
+    <div id="resultado"></div>
+
+    <script>
+        window.onload = function() {
+            mostrarTablas();
+        }
+		// Se ha agregado una función "window.onload" que llama a la función "mostrarTablas()" cuando la página se carga.
+		// La función "mostrarTablas()" se encarga de generar y mostrar en el div con id "resultado" las tablas de multiplicar del 1 al 10.
+
+        function mostrarTablas() {
+            let resultado = "";
+            for (let numero = 1; numero <= 10; numero++) {
+                resultado += "<h3>Tabla del " + numero + "</h3>";
+                for (let i = 1; i <= 10; i++) {
+                    resultado = resultado.concat(numero, " x ", i, " = ", numero * i, "<br>");
+                }
+            }
+            document.getElementById("resultado").innerHTML = resultado;
+        }
+    </script>
+	
+</body>
+
+</html>
